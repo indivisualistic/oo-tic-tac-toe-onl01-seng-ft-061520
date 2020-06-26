@@ -46,8 +46,6 @@ def turn_count
     turn_count % 2 == 0 ? "X" : "O"
   end
 
-  end
-
   def turn
   puts "Please choose a number 1-9:"
   user_input = gets.chomp
