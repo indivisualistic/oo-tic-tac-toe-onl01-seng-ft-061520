@@ -31,6 +31,15 @@ end
 def valid_move?(index_i)
 index_i.between?(0,8) && !position_taken?(index_i)
 end
-def turn_count
-end
+def turn
+    puts "Please enter 1-9:"
+    input = gets.strip
+    if valid_move?(input)
+      move(input, current_player)
+    else
+      turn
+    end
+    display_board
+  end
+
 end
