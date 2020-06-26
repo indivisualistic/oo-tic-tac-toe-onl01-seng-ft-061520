@@ -31,7 +31,6 @@ end
 def valid_move?(index_i)
 index_i.between?(0,8) && !position_taken?(index_i)
 end
-
 def turn_count
     counter = 0
     @board.each do |i|
@@ -41,21 +40,18 @@ def turn_count
     end
     counter
   end
-
   def current_player
     turn_count % 2 == 0 ? "X" : "O"
   end
-
   def turn
-  puts "Please choose a number 1-9:"
-  user_input = gets.chomp
-  index = input_to_index(user_input)
-  if valid_move?(index)
-    player_token = current_player
-    move(index, player_token)
-    display_board
-  else
-    turn
+    puts "Please choose a number 1-9:"
+    user_input = gets.chomp
+    index = input_to_index(user_input)
+    if valid_move?(index)
+      player_token = current_player
+      move(index, player_token)
+      display_board
+    else
+      turn
+    end
   end
-end 
-end
