@@ -67,6 +67,18 @@ def turn_count
       end
       return false
   end
+
+def full?
+    @board.all? { |i| i =="X" || i == "O"}
+  end
+
+  def draw?
+    !won? && full? ? true : false
+  end
+
+  def over?
+    won? || draw? || full? ? true : false
+  end
 end
   end
 end
