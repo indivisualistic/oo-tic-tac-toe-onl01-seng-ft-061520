@@ -46,3 +46,13 @@ def turn_count
   end
 
   end
+  def turn
+      puts "Please enter 1-9:"
+      input = gets.strip
+      if valid_move?(input)
+        move(input, current_player)
+      else
+        turn
+      end
+      display_board
+    end
